@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Local Shop</title>
+  <style>
+    body { font-family: Arial; margin: 0; padding: 0; }
+    header { background: #2e7d32; color: white; padding: 15px; text-align: center; }
+    .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px,1fr)); gap: 15px; padding: 15px; }
+    .card { border: 1px solid #ccc; padding: 10px; border-radius: 8px; text-align: center; }
+    button { background: #25D366; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>Ram Kirana Store</h2>
+  <p>Fresh groceries at best price</p>
+</header>
+
+<div class="products">
+  <div class="card">
+    <h3>Rice (1kg)</h3>
+    <p>₹60</p>
+    <button onclick="order('Rice 1kg - ₹60')">Order</button>
+  </div>
+
+  <div class="card">
+    <h3>Sugar (1kg)</h3>
+    <p>₹45</p>
+    <button onclick="order('Sugar 1kg - ₹45')">Order</button>
+  </div>
+</div>
+
+<script>
+function order(item){
+  let phone = "91XXXXXXXXXX"; // shopkeeper number
+  let msg = "Hello, I want to order: " + item;
+  window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(msg));
+}
+</script>
+
+</body>
+</html>
